@@ -1,0 +1,25 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<h1> Pagina de busqueda de alumno  <h1>{% comment %} titulo de mi pagina cargado por un block heredado del html padre
+    {% endcomment %}
+
+{% endblock  %}
+
+{% block otro_contenido %}
+
+<form action = "{% url 'buscar' %}" method = "GET">
+    <input type = "number" name = "expte" id = "expte">
+    <input type = "submit" value = "BUSCAR ALUMNO">{% comment %} 
+    creamos el mediante el metodo en este caso GET y tipo de dato por el cual buscaremos al alumno,
+    en este caso por numero y cuando presionemos buscar alumno nos mandara a la url buscar
+    {% endcomment %}
+
+</form>
+
+{{ mensaje }}{% comment %} 
+    este mensaje se ejecutara siempre y cuando no se escriba nada en el formulario y se lo mande vacio
+{% endcomment %}
+{% endblock  %}

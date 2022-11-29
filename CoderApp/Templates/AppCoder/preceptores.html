@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<h1> Pagina de preceptores<h1>
+
+    
+{% endblock  %}
+
+{% block otro_contenido %}
+
+<form action = "{% url 'preceptores' %}" method = "POST"> {% csrf_token %}
+
+    <table>
+        {{ form2.as_table }}
+    </table>
+        
+        <input type = "submit" value = "ENVIAR PRECEPTOR">
+        
+        </form>
+{% endblock  %}

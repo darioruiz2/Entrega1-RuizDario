@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<h1> Pagina de profesores <h1>
+
+    
+{% endblock  %}
+
+{% block otro_contenido %}
+
+<form action = "{% url 'profesores' %}" method = "POST"> {% csrf_token %} 
+
+    <table>
+        {{ form1.as_table }}
+    </table>
+        
+        <input type = "submit" value = "ENVIAR PROFESOR">
+        
+        </form>
+{% endblock  %}
+

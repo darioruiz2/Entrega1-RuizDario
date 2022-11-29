@@ -1,0 +1,25 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<h1> Resultado de busqueda <h1>
+
+{% endblock  %}
+
+{% block otro_contenido %}
+
+<h3> Los alumnos encontrados son </h3>
+{% for i in alumno %}
+    nombre :<li>{{i.nombre}}</li>   
+
+    expte : <li>{{i.expte}}</li>
+
+    {% comment %} 
+    aqui llegaran los datos que se encontraron y mediante un for se muestran en pantalla tanto 
+      su nombre como su expte 
+    {% endcomment %}
+{% endfor %}
+
+{% endblock  %}
+

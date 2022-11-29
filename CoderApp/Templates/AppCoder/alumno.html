@@ -1,0 +1,41 @@
+{% extends "AppCoder/padre.html" %}  {% comment %} 
+    heredamos el html padre mediante el metodo extends y en codigo jinja
+{% endcomment %}
+
+{% load static %}
+{% comment %} 
+    cargamos el estatico
+    {% endcomment %}
+{% block contenido %}
+
+<h1> Pagina de alumnos <h1>
+
+    
+{% endblock  %}
+
+{% block otro_contenido %}
+
+<form action = "{% url 'alumno' %}" method = "POST"> {% csrf_token %} 
+    {% comment %} 
+    creamos el boton que cuando se presione nos llevara a la url de alumno mediante el metodo post
+    {% endcomment %}
+
+<table>
+    {% comment %} 
+    aqui en esta tabla vendra desde el archivo views vacio 
+    {% endcomment %}
+    {{ form.as_table }}
+</table>
+    
+    <input type = "submit" value = "ENVIAR ALUMNO">
+    {% comment %} 
+    Cuando presionemos el input "enviar alumno" lo mandaremos al view por el metodo POST 
+    {% endcomment %}
+    </form>
+{% endblock  %}
+
+{% comment %} 
+    este html de cargado de alumno solo sera comentado ya que el html 
+    de preceptores y profesores es relativamente lo mismo 
+    {% endcomment %}
+
